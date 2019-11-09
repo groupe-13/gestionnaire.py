@@ -1,0 +1,58 @@
+# gestion
+guichetier
+ # le code ecrit par ABDELHAKIM ALI KHALIL   
+class Guichetier:
+    # le Guichetier c'est un personne
+    def __init__(self,nom,poste):
+  # On créé des variables
+        self.nom =""
+        self.poste=""  
+ # nouvelle classe
+class Client:
+    
+    def __init__(self,nom,prenom,adresse,compte):
+  # On créé des variables d'un client
+        self.nom =""
+        self.prenom =""
+        self.adresse = ""
+        self.compte =""
+        
+print("self.nom,prenom,adresse,compte")
+ # nouvelle classe compte
+
+class Compte(Client):
+    def __init__(self,nom,prenom,adresse,numerocompteclient,balanceclient):
+        Client.__init__("nom, prenom, adresse, compte")
+        self.numerocompteclient= ""
+        self.balanceclient= 0
+    def ajoute_argent(self,montant):
+        self.balance+=montant
+        print ("vous avez ajoute{0} euro au compte client {1}".format(montant,self.nom))
+         
+    def retirer_argent(self,montant):
+        self.balance -= montant
+        print("vous avez retirer {0} euro au compte client {1}".format(montant,self.nom))
+    def afficher_balance(self):
+        print("{0} a {1} euro dans son compte client {1}".format(self.nom,self.balance))
+clients = {}
+reponse = "oui"
+
+while reponse =="oui":
+    nom=input("saisissez le nom du client : ")
+    montant = input("saisissez son solde de depart : ")
+    ajoute = input("ajoute d'argent dans un compte: ")
+    retraire = input("ecrit les montant de retraire: " )
+    
+    clients[nom] = Compte(Client)
+    clients[nom].nom=nom
+    clients[nom].balance=montant
+    
+    reponse = input("voulez vous ajouter un autre client? oui/non ")
+    print("")
+    
+    
+print("")
+print("voici la liste des clients de banque :")
+for client, in clients.values():
+    print("{0} : {1} euro en compte".format(clients.nom,clients.balance))
+   
