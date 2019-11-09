@@ -1,2 +1,0 @@
-# gestion
-guichetier
